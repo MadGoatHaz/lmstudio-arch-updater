@@ -1,47 +1,30 @@
 # LM Studio Arch Linux Updater
 
-![Bash](https://img.shields.io/badge/bash-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
-
-A standalone helper script to fetch, download, and install the absolute latest LM Studio beta or stable release for Arch Linux.
+A professional utility to maintain the latest LM Studio releases on Arch Linux, resolving AUR update loops through direct version tracking.
 
 ## Features
 
-- **Dual-Track Resolution**: Supports both stable release header inspection and beta release HTML scraping to ensure you always have the latest version.
-- **AUR-Cohesive Deployment**: Works seamlessly with or without the `lmstudio-bin` AUR package, handling deployments to \`/opt/lm-studio\`.
-- **Interactive Prompting**: Includes user-friendly interactive prompts with timeouts for automated or manual update flows.
-
-## Dependencies
-
-- \`curl\`
-- \`grep\`
-- \`awk\`
-- \`sed\`
-- \`pacman\`
-- \`sudo\`
+- **Dual-Track Resolution**: Precise detection using Stable Header Inspection vs. Beta HTML Scraping.
+- **AUR-Cohesive Deployment**: Works seamlessly with or without the `lmstudio-bin` AUR package.
+- **Interactive Prompting**: User-friendly interface with automated timeouts for efficient workflows.
+- **Direct Version Tracking**: Reliable version detection via local tracking at `/opt/lm-studio/.version`.
 
 ## Installation
 
-1. **Clone the repository**:
-   \`\`\`bash
-   git clone https://github.com/yourusername/lmstudio-beta-updater.git
-   cd lmstudio-beta-updater
-   \`\`\`
-
-2. **Make the script executable**:
-   \`\`\`bash
-   chmod +x lmstudio-beta-updater.sh
-   \`\`\`
-
-3. **Install to system path**:
-   \`\`\`bash
+1. **Copy the script to your path**:
+   ```bash
    sudo cp lmstudio-beta-updater.sh /usr/local/bin/update-lmstudio
-   \`\`\`
+   ```
+
+2. **Ensure it is executable**:
+   ```bash
+   sudo chmod +x /usr/local/bin/update-lmstudio
+   ```
 
 ## Usage
 
-Simply run the command to check for and apply updates:
+Run the following command to manage your LM Studio installation:
 
-\`\`\`bash
+```bash
 update-lmstudio
-\`\`\`
+```

@@ -32,18 +32,28 @@ check_dependencies() {
 }
 
 # Discover local version and installation type
+# Discover local version and installation type
 discover_local() {
     IS_AUR=false
     LOCAL_VERSION="none"
 
-    # Check if AUR package is installed
+    # 1. Determine if AUR package is installed (Sets flag only)
     if pacman -Q lmstudio-bin >/dev/null 2>&1; then
         IS_AUR=true
-        LOCAL_VERSION=$(pacman -Q lmstudio-bin | awk '{print $2}')
-        echo "Detected AUR installation (lmstudio-bin): version ${LOCAL_VERSION}"
-    elif [ -f "$VERSION_FILE" ]; then
+    fi
+
+    # 2. Determine actual Local Version (Prioritize .version file)
+    if [ -f "$VERSION_FILE" ]; then
         LOCAL_VERSION=$(cat "$VERSION_FILE")
-        echo "Detected standalone installation: version ${LOCAL_VERSION}"
+        if [ "$IS_AUR" = true ]; then
+            echo "Detected AUR installation base. Tracked script version: ${LOCAL_VERSION}"
+        else
+            echo "Detected standalone installation: version ${LOCAL_VERSION}"
+        fi
+    elif [ "$IS_AUR" = true ]; then
+        # Fallback to pacman if .version missing (first run over an AUR install)
+        LOCAL_VERSION=$(pacman -Q lmstudio-bin | awk '{print $2}')
+        echo "Detected AUR installation: pacman version ${LOCAL_VERSION}"
     elif [ -f "$APPIMAGE_PATH" ]; then
         echo "Warning: /opt/lm-studio exists but .version file is missing."
         LOCAL_VERSION="unknown"
