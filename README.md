@@ -1,30 +1,33 @@
 # LM Studio Arch Linux Updater
 
+![Bash](https://img.shields.io/badge/bash-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
+
 A professional utility to maintain the latest LM Studio releases on Arch Linux, resolving AUR update loops through direct version tracking.
 
 ## Features
 
-- **Dual-Track Resolution**: Precise detection using Stable Header Inspection vs. Beta HTML Scraping.
-- **AUR-Cohesive Deployment**: Works seamlessly with or without the `lmstudio-bin` AUR package.
-- **Interactive Prompting**: User-friendly interface with automated timeouts for efficient workflows.
-- **Direct Version Tracking**: Reliable version detection via local tracking at `/opt/lm-studio/.version`.
+- **Dual-Track Resolution**: Stable Header Inspection vs. Beta HTML Scraping.
+- **AUR-Cohesive Deployment**: Works with or without \`lmstudio-bin\`.
+- **Interactive Prompting**: User-friendly interface with automated timeouts.
+- **Direct Version Tracking**: Reliable detection via \`/opt/lm-studio/.version\`.
 
 ## Installation
 
-1. **Copy the script to your path**:
-   ```bash
+1. **Install to system path**:
+   \`\`\`bash
    sudo cp lmstudio-beta-updater.sh /usr/local/bin/update-lmstudio
-   ```
+   \`\`\`
 
-2. **Ensure it is executable**:
-   ```bash
+2. **Make the script executable**:
+   \`\`\`bash
    sudo chmod +x /usr/local/bin/update-lmstudio
-   ```
+   \`\`\`
 
 ## Usage
 
-Run the following command to manage your LM Studio installation:
+Run \`update-lmstudio\` to manage your installation.
 
-```bash
+\`\`\`bash
 update-lmstudio
-```
+\`\`\`
