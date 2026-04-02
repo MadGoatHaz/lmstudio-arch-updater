@@ -1,0 +1,10 @@
+# Temporary files
+*.tmp
+*.log
+
+# Scripts and binaries
+*.sh.x
+*.bin
+
+# Local environment
+.env
