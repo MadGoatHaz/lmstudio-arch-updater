@@ -8,26 +8,26 @@ A professional utility to maintain the latest LM Studio releases on Arch Linux, 
 ## Features
 
 - **Dual-Track Resolution**: Stable Header Inspection vs. Beta HTML Scraping.
-- **AUR-Cohesive Deployment**: Works with or without \`lmstudio-bin\`.
+- **AUR-Cohesive Deployment**: Works with or without `lmstudio-bin`.
 - **Interactive Prompting**: User-friendly interface with automated timeouts.
-- **Direct Version Tracking**: Reliable detection via \`/opt/lm-studio/.version\`.
+- **Direct Version Tracking**: Reliable detection via `/opt/lm-studio/.version`.
 
 ## Installation
 
 1. **Install to system path**:
-   \`\`\`bash
-   sudo cp lmstudio-beta-updater.sh /usr/local/bin/update-lmstudio
-   \`\`\`
+```
+sudo cp lmstudio-beta-updater.sh /usr/local/bin/update-lmstudio
+```
 
 2. **Make the script executable**:
-   \`\`\`bash
-   sudo chmod +x /usr/local/bin/update-lmstudio
-   \`\`\`
+```
+sudo chmod +x /usr/local/bin/update-lmstudio
+```
 
 ## Usage
 
-Run \`update-lmstudio\` to manage your installation.
+Run `update-lmstudio` to manage your installation.
 
-\`\`\`bash
+```
 update-lmstudio
-\`\`\`
+```
